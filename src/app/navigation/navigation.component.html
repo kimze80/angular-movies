@@ -1,0 +1,30 @@
+
+<nav>
+  <div class="web-block">
+    <a [routerLink]="'/movies/popular'" routerLinkActive="active">Popular</a>
+    <a routerLink="/movies/upcoming" routerLinkActive="active">Upcoming</a>
+    <a routerLink="/movies/top_rated" routerLinkActive="active">top rated</a>
+    <a routerLink="/movies/now_playing" routerLinkActive="active">now playing</a>
+  </div>
+  
+  <div class="mobile-block">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-secondary" ngbDropdownToggle><fa-icon [icon]="faBars"></fa-icon></button>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem>
+          <a [routerLink]="'/movies/popular'" routerLinkActive="active">Popular</a>
+        </button>
+        <button ngbDropdownItem>
+          <a routerLink="/movies/upcoming" routerLinkActive="active">Upcoming</a>
+        </button>
+        <button ngbDropdownItem>
+          <a routerLink="/movies/top_rated" routerLinkActive="active">top rated</a>
+        </button>
+        <button ngbDropdownItem>
+          <a routerLink="/movies/now_playing" routerLinkActive="active">now playing</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+

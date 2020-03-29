@@ -1,0 +1,25 @@
+<div class="page-title">
+  <h1>{{ category?.replace("_", " ") | uppercase }}</h1>
+  <div class="error" *ngIf="error">
+    {{ error }}
+  </div>
+  <input 
+    type="text" 
+    [(ngModel)]="query" 
+    (input)="searchRaw(query)" 
+    placeholder="search"
+  >
+</div>
+
+<app-display-movies *ngIf="!error" [data]="movies"></app-display-movies>
+<div class="pag">
+  <ngb-pagination
+    [collectionSize]="totalResults"
+    [page]="page"
+    [maxSize]="5"
+    [pageSize]="20"
+    [boundaryLinks]="true"
+    (pageChange)="getMovies($event)"
+    [ellipses]="true"
+  ></ngb-pagination>
+</div>

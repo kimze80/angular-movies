@@ -1,0 +1,17 @@
+@apikey = cea68b520beecac6718820e4ac576c3a
+
+
+
+
+https://api.themoviedb.org/3/movie/809?api_key={{apikey}}&language=en-US`;
+###
+
+
+https://api.themoviedb.org/3/search/movie?api_key={{apikey}}&query=Fantasy&language=en-US`;
+###
+
+https://api.themoviedb.org/3/genre/movie/list?api_key={{apikey}}&query=Fantasy&language=en-US`;
+###
+
+
+https://api.themoviedb.org/3/discover/movie?api_key={{apikey}}&language=en-US&with_genres=28

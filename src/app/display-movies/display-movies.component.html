@@ -1,0 +1,21 @@
+<div class="wrapper">
+  
+  <div 
+    class="movieCard" 
+    *ngFor="let movie of data" 
+    routerLink="/movie/{{ movie.id }}"
+  >
+    <div class="movie-img">
+      <img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path"/>
+    </div>
+    <div class="movie-title title">{{ movie.title }}</div>
+    <div class="bundle">
+      <div class="movie-pop">{{ movie.release_date }}</div>
+      <div class="movie-rate">{{ movie.vote_average }}⭑</div>
+    </div>
+    
+  </div>
+    
+
+  <h5 *ngIf="!data.length">no movies yet</h5>
+</div>
