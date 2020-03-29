@@ -24,8 +24,6 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
       this.movie = result;
     } catch (error) {
       console.log(error.message);
-
-      this.error = error.message || error.error.status_message
     }
   }
 
@@ -33,7 +31,6 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
     this.paramSubscription = this.activatedRoute.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.getMovieData();
-      window.scrollTo({top:0, behavior: 'smooth'});
     });
   }
   ngOnDestroy() {

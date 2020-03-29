@@ -1,10 +1,15 @@
 <div class="movie" *ngIf="movie && !error">
   <div class="info">
+
+    <!-- Movie title -->
     <h1>
       {{ movie.title }}
     </h1>
 
+    <!-- Rating -->
     <ngb-rating [rate]="movie.vote_average" [readonly]="true"></ngb-rating>
+
+    <!-- Content -->
     <h3>{{ movie.tagline }}</h3>
     <div class="countries">
       <span class="country" *ngFor="let country of movie.production_countries">
@@ -29,6 +34,8 @@
       />
     </div>
   </div>
+
+  <!-- Poster -->
   <div
     class="poster"
     [style.backgroundImage]="

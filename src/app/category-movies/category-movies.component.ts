@@ -16,6 +16,7 @@ export class CategoryMoviesComponent implements OnInit, OnDestroy {
   pages = 0;
   totalResults = 0;
   query = '';
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private api: ApiService,
@@ -35,7 +36,8 @@ export class CategoryMoviesComponent implements OnInit, OnDestroy {
     );
   }
 
-  async getMovies(page ) {
+  // For pagination
+  async getMovies(page) {
     const result: any = await this.api.getCategoryRaw(this.category, page);
     console.log(result);
     this.page = result.page;
@@ -45,6 +47,7 @@ export class CategoryMoviesComponent implements OnInit, OnDestroy {
     this.movies = [ ...result.results];
   }
 
+  // For search
   searchRaw = (query: string) => {
 
     this.api.searchMovieRaw(query).then( data => {
