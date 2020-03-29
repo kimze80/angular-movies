@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
-import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-display-movie',
@@ -17,7 +16,6 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private api: ApiService,
-    private storage: StorageService
   ) {}
   async getMovieData() {
     try {
